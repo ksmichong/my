@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 500px;
+				margin: 50px auto;
+			}
+			button{
+				width: 100px;
+				height: 30px;
+				float: left;
+				border: none;
+				background-color: #ccc;
+			}
+			
+			span{
+				width: 500px;
+				height: 470px;
+				display: none;
+				background-color: pink;
+			}
+			.btn{
+				background: pink;
+			}
+			.span1{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box-top">
+				<button class="btn">男装</button>
+				<button>女装</button>
+				<button>童装</button>
+				<button>鞋子</button>
+				<button>袜子</button>
+			</div>
+			<div id="box-bottom">
+				<span class="span1">全部男装</span>
+				<span>全部女装</span>
+				<span>全部童装</span>
+				<span>全部鞋子</span>
+				<span>全部袜子</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var boxBottom=document.getElementById("box-bottom");
+			var btn=document.getElementsByTagName("button");
+			var span=document.getElementsByTagName("span");
+			for(var a=0;a<btn.length;a++){
+				btn[a].index=a;
+				btn[a].onclick=function(){
+					for(var b=0;b<btn.length;b++){
+						btn[b].className="";
+						span[b].className="";
+					}
+					this.className="btn";
+					span[this.index].className="span1";
+				}
+			}
+		</script>
+	</body>
+</html>
